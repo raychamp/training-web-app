@@ -9,14 +9,14 @@
 </head>
 <body>
 
-	<h3>Welcome to the training app, the date and time is
-		${dateAndTime}</h3>
+	<h1>Login page</h1>
+	<div>
+			<ul>
+				<c:forEach items="${users}" var="user">
+					<li>${user}</li>
+				</c:forEach>
+			</ul>
 
-	<c:forEach var="i" begin="1" end="5">
-		<p>${i}</p>
-	</c:forEach>
-
-
-
+		</div>
 </body>
 </html>
