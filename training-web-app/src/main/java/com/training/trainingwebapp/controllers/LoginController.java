@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.training.trainingwebapp.model.User;
-import com.training.trainingwebapp.model.Vehicle;
 import com.training.trainingwebapp.repository.LoginRepository;
 
 @Controller
