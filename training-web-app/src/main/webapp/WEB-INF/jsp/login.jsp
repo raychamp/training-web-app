@@ -26,15 +26,17 @@
 <meta charset="UTF-8">
 <title>Login</title>
 </head>
-<body ng-app="myApp" class="ng-cloak">
+<body ng-app="myApp" class="ng-cloak" style="padding: 50px">
 
 <div class="generic-container" ng-controller="LoginController as loginCtrl">
-		<div class="panel panel-default">
+		<div class="panel panel-primary" style="width: 500px">
 		<div class="panel-heading"> <span class="lead" >Login page</span></div>
 			<div class="formcontainer">
+			
 			<form ng-submit="loginCtrl.submit()" name="myForm" class="form-horizontal">
 			<input type="hidden" ng-model="loginCtrl.login.id" />
-			<div class="row">
+			
+			<div class="row" style="padding: 10px">
 				<div class="form-group col-md-12">
 					<label class="col-md-2 control-lable" for="file">Userid:</label>
 					<div class="col-md-7">
@@ -48,20 +50,31 @@
 					</div>			
 				</div>
 			</div>
+			
+			<div class="row" style="padding: 10px">
+                          <div class="form-group col-md-12">
+                              <label class="col-md-2 control-lable" for="file">Password:</label>
+                              <div class="col-md-7">
+                                  <input type="password" ng-model="loginCtrl.login.password" name="password" class="password form-control input-sm" placeholder="Enter your password" required/>
+                                  <div class="has-error" ng-show="myForm.$dirty">
+                                      <span ng-show="myForm.email.$error.required">This is a required field</span>
+                                      <span ng-show="myForm.email.$invalid">This field is invalid </span>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+                       <div class="row">
+                          <div style="float: right; padding: 20px">
+                          <!-- <div class="form-actions floatRight"> -->
+                              <input type="submit"  value="Login" class="btn btn-primary btn-sm" ng-disabled="myForm.$invalid">
+                          </div>
+                      </div>
+                      </form>
+</div>
+</div>
 
 
-<div class="alert alert-info">
-	<h1>Login page</h1>
-	</div>
-	<div class="alert alert-success">
-	
-		<label>Userid:</label><input type="text" ng-model="userid" size="25"> "{{ userid }}"<br>
-		
-		<label>Password:</label><input type="password" ng-model="password"> "{{password}}"<br>
-		<input type="submit" name="Submit">
-		<br>
-		</div>
-	
 	
 </body>
 </html>
