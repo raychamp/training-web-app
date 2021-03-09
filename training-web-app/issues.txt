@@ -1,0 +1,8 @@
+1.) Using JpaRepository findById(id) uses an Optional.  Needed to modify like so:
+
+@GetMapping("/{id}")
+public ResponseEntity<UserDTO> getUserById(@PathVariable("id") final Long id){
+	Optional<UserDTO> user = loginJpaRepository.findById(id);
+	UserDTO userOptional = user.get();
+	return new ResponseEntity<UserDTO>(userOptional, HttpStatus.OK);
+}

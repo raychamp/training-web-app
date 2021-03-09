@@ -1,30 +1,28 @@
 package com.training.trainingwebapp.model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.Table;
 
 
 @Entity
-//@Table
-public class User implements Serializable{
+@Table(name="User")
+public class UserDTO implements Serializable{
 	
 	/**
-	 * 
+	 *  Data Transfer Object - DTO
 	 */
 	private static final long serialVersionUID = 1L;
 
-	public User() {};
+	public UserDTO() {};
 	
-	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="ID")
 	private Long id;
 	@Column(name="FIRST_NAME")
@@ -54,6 +52,26 @@ public class User implements Serializable{
 				+ ", serviceLevel=" + serviceLevel + ", trainer=" + trainer + "]";
 	}
 	
+	
+	
+	public UserDTO(Long id, String firstName, String lastName, String sex, String dob, String email,
+			String serviceLevel, String userid, String password, String trainer, String sessionInitialized) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.sex = sex;
+		this.dob = dob;
+		this.email = email;
+		this.serviceLevel = serviceLevel;
+		this.userid = userid;
+		this.password = password;
+		this.trainer = trainer;
+		this.sessionInitialized = sessionInitialized;
+	}
+
+
+
 	public String getTrainer() {
 		return trainer;
 	}
